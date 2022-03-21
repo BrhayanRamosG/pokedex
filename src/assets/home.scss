@@ -1,0 +1,20 @@
+$text-color: #fff;
+$bg-color: #000000;
+
+$bg-button: #cfb000;
+#app {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+body {
+  min-height: 100vh;
+  color: $text-color;
+  background: $bg-color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.btn-search {
+  background-color: $bg-button;
+}
