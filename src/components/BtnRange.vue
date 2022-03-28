@@ -1,9 +1,20 @@
 <template>
-  <div></div>
+  <button @click="actionBtn">
+    {{ msg }}
+    <slot></slot>
+  </button>
 </template>
 
 <script>
 export default {
-  setup() {},
+  props: {
+    msg: String,
+  },
+  setup(props, context) {
+    const actionBtn = () => {
+      context.emit("action");
+    };
+    return { props, actionBtn };
+  },
 };
 </script>
