@@ -33,3 +33,15 @@ npm run build
 ```sh
 npm run lint
 ```
+
+### Capturas
+
+![Pokédex Inicio](src/assets/images/Pokedex-Inicio.png)
+
+![Pokédex Movimientos](src/assets/images/Pokedex-Movimientos.png)
+
+![Pokédex Lista](src/assets/images/Pokedex-Lista.png)
+
+### Demo
+
+URL: [Pokédex BRG](https://hungry-neumann-555edb.netlify.app/)
