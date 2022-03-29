@@ -1,41 +1,36 @@
 <template>
-  <div class="bg-red-500 px-5 py-5 mx-3 my-3 rounded-md">
+  <div class="group relative bg-amber-500 shadow-md">
     <div
-      class="max-w-2xl mx-auto py-8 px-4 sm:py-12 sm:px-6 lg:max-w-7xl lg:px-8"
+      class="w-full min-h-80 bg-yellow-100 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none"
     >
-      <h2 class="text-2xl font-extrabold tracking-tight text-gray-100">
-        Lista de Pokémons
-      </h2>
-
-      <div
-        class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8"
-      >
-        <div
-          v-for="(value, index) in data?.results"
-          :key="index"
-          class="group relative bg-yellow-200"
-        >
-          <div class="ml-4 mt-4 flex justify-start">
-            <div>
-              <h3 class="capitalize text-lg text-gray-700">
-                <strong class="text-gray-700">{{ index + 1 }} -</strong>
-                <a href="#">
-                  <span aria-hidden="true" class="absolute inset-0" />
-                  {{ value.name }}
-                </a>
-              </h3>
-            </div>
-          </div>
-        </div>
+      <img
+        :src="data.sprites?.front_default"
+        :alt="data.name"
+        class="w-full h-full object-center object-cover lg:w-full lg:h-full"
+      />
+    </div>
+    <div class="ml-4 mt-4 flex justify-start">
+      <div>
+        <h3 class="capitalize text-lg font-bold text-white">
+          <strong class="text-gray-600">{{ index + 1 }} -</strong>
+          <RouterLink :to="`/movimientos/${data.name}`">
+            <span aria-hidden="true" class="absolute inset-0" />
+            {{ data.name }}
+          </RouterLink>
+        </h3>
+        <p class="mt-1 text-lg font-bold text-white">ID #{{ data.id }}</p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { RouterLink } from "vue-router";
 export default {
+  components: { RouterLink },
   props: {
     data: Object,
+    index: Number,
   },
   setup(props) {
     return {

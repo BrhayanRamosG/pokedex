@@ -147,7 +147,6 @@ export default {
           character.stateFail = false;
         }, 2400);
       } else {
-        console.log(data);
         character.data = data;
         character.offset = data.id - 1;
         character.name = "";

@@ -61,7 +61,7 @@ const navigation = [
     href: "/",
   },
   {
-    name: "Listar Pokémons",
+    name: "Listar Pokémon",
     href: "/listado",
   },
 ];
